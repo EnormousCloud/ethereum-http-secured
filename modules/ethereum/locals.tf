@@ -13,7 +13,7 @@ locals {
     netparam = concat(
         local.network_name == "goerli" ? ["--goerli"] : [],
         local.network_name == "rinkeby" ? ["--rinkeby"] : [],
-        local.network_name == "yolov1" ? ["--yolov1"] : [],
+        local.network_name == "yolov3" ? ["--yolov3"] : [],
         local.network_name == "ropsten" ? ["--ropsten"] : []
     )
 

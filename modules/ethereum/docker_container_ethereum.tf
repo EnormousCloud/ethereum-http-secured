@@ -18,6 +18,7 @@ resource "docker_container" "ethereum" {
       "0.0.0.0", 
       "--http.api", 
       var.rpcapis,
+      "--http.vhosts", "${local.host},${local.proxyhost},localhost",
       "--syncmode=${local.syncmode}"
     ])
   
@@ -44,7 +45,6 @@ resource "docker_container" "ethereum" {
   ports {
     internal = 30303
     external = 30303
-    protocol = "tcp" 
   }
 
   # persistent storage

@@ -12,3 +12,10 @@ module "ethereum" {
     network_name = local.network_name
     network_params = module.network.params
 }
+
+module "httpproxy" {
+    source = "./../../modules/httpproxy"
+    network_name = local.network_name
+    backend_host = module.ethereum.host.hostname
+    network_params = module.network.params
+}

@@ -6,6 +6,7 @@ locals {
     network_name = var.network_name
 
     host = "eth-${local.network_name}-${local.syncmode}-${var.network_params.postfix}"
+    proxyhost = "http-${local.network_name}-${var.network_params.postfix}"
     env = []
 }
 

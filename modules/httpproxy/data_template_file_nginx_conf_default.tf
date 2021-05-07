@@ -9,8 +9,8 @@ data "template_file" "nginx_conf_default" {
         listen  [::]:80;
         server_name _;
         location / {
-            # auth_basic "Ethereum $${network_name}";
-            # auth_basic_user_file /etc/nginx/.htpasswd;
+            auth_basic "Ethereum $${network_name}";
+            auth_basic_user_file /etc/nginx/.htpasswd;
 
             proxy_pass http://ethereum_backend;
             proxy_set_header Host            $host;

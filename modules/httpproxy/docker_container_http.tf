@@ -21,6 +21,10 @@ resource "docker_container" "http" {
     content = "${data.template_file.nginx_conf_default.rendered}"
     file    = "/etc/nginx/conf.d/default.conf"
   }
+  upload {
+    content = "${data.template_file.htpasswd.rendered}"
+    file    = "/etc/nginx/.htpasswd"
+  }
 
   ports {
     internal = 80
